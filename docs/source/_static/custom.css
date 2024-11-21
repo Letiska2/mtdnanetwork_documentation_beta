@@ -1,0 +1,50 @@
+/* Ajusta o tamanho da logo */
+.md-header__inner .md-logo {
+    max-height: 40px; /* Reduz o tamanho da logo */
+}
+
+/* Ajusta a largura da barra lateral */
+.md-sidebar--primary {
+    width: 200px; /* Define a largura da barra lateral */
+}
+.small-text {
+    font-size: 0.8em; /* Ajuste o valor para o tamanho desejado */
+}
+.subtitle {
+    font-size: 1.3em; /* Ajuste o valor para o tamanho desejado */
+}
+.gray{
+    color:#343242;
+}
+.highlight pre {
+    font-weight: 300; /* Código com espessura fina */
+}
+/* Ajuste a espessura dos títulos */
+ h2, h3, h4, h5, h6 {
+    font-weight: 200; /* Títulos mais finos */
+}
+
+/* Esconde todas as imagens por padrão */
+.theme-image {
+    display: none;
+}
+
+/* Mostrar imagem para modo claro */
+.light .theme-image-light {
+    display: block;
+}
+
+/* Mostrar imagem para modo escuro */
+.dark .theme-image-dark {
+    display: block;
+}
+/* Usar a imagem para o modo claro */
+.light .image-network {
+    content: url("{{ image-network }}");
+}
+
+/* Usar a imagem para o modo escuro */
+.dark .image-network {
+    content: url("{{ image-network }}");
+}
+

@@ -1,0 +1,38 @@
+
+
+- **Individual Number by Mutations**:
+- **Mutations by Disease**:
+- **Disease Number by Mutations**:
+- **Mutations Number by Disease**:
+- **Jaccard Index for Disease Pairs**:
+- **Number of Shared Variants for Disease Pairs**:
+
+Parkinson Dashboard
+"""""""""""""""""""
+
+- **Sex by Age**:
+- **Transitions Number by Group**:
+- **Transversions Number by Group**:
+- **Indels Count by Locus**:
+- **Transitions Number by Group in MT-CO1**:
+- **Transitions Number by Group in MT-CO3**:
+- **Transitions Number by Group in MT-ND4**:
+- **Transitions Number by Group in MT-ND5**:
+- **Transitions Number by Group in MT-RNR2**:
+- **Transversions Number by Group in MT-CO3**:
+- **Transversions Number by Group in MT-ND4**:
+- **Transversions Number by Group in MT-ND5**:
+- **Transversions Number by Group in MT-RNR2**:
+
+Leprosy Dashboard
+"""""""""""""""""
+
+- **Mitochondrial Ancestry for Clinical Forms**:
+- **Mitochondrial Ancestry for Poles**:
+- **Variants Count by Locus**:
+- **Heteroplasmy Level by Locus in BL**:
+- **Heteroplasmy Level by Locus in LL**:
+- **Heteroplasmy Level by Locus in BT**:
+- **Heteroplasmy Level by Locus in Control**:
+- **Heteroplasmy Average by Locus between Groups**:
+- **Sex Number and Age by Groups**:

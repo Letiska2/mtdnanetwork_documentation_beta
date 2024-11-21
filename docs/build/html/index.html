@@ -1,0 +1,923 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+
+    <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
+        <title>mtDNA-Network 2.3 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=b89b620c" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #eeffcc;
+  --color-code-foreground: black;
+  --image-network: _static/star_import.png;
+  --color-code-foreground: #343242;
+  --color-brand-primary: MediumSeaGreen;
+  --color-brand-content: BlueViolet;
+  --color-brand-background: Salmon;
+  --color-background-primary: #FFFFFF;
+  --color-background-secondary: #F7F7F7;
+  --color-text-primary: #343242;
+  --color-text-secondary: #343242;
+  --color-text-title: #343242;
+  --color-admonition-title--important: #D32F2F;
+  --color-admonition-title--note: #0288D1;
+  --color-admonition-title--tip: #388E3C;
+  --color-admonition-title--warning: #FBC02D;
+  --color-admonition-background--important: #FFEBEE;
+  --color-admonition-background--note: BlueViolet;
+  --color-admonition-background--tip: #E8F5E9;
+  --color-admonition-background--warning: #FFF8E1;
+  --color-border: #E0E0E0;
+  --color-background-code: #F5F2F0;
+  --color-text-code: #D6336C;
+  --color-border-code: #CCCCCC;
+  --color-background-footer: #212121;
+  --color-text-footer: #BDBDBD;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --image-network: _static/star.png;
+  --color-brand-primary: SpringGreen;
+  --color-brand-content: BlueViolet;
+  --color-brand-background: Fuchsia;
+  --color-background-primary: #121212;
+  --color-background-secondary: #1E1E1E;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #BBBBBB;
+  --color-text-title: #E0E0E0;
+  --color-admonition-title--important: #FF1744;
+  --color-admonition-title--note: #40C4FF;
+  --color-admonition-title--tip: #00E676;
+  --color-admonition-title--warning: #FFC107;
+  --color-admonition-background--important: #FF5252;
+  --color-admonition-background--note: #80D8FF;
+  --color-admonition-background--tip: #B9FBC0;
+  --color-admonition-background--warning: #FFE57F;
+  --color-border: #424242;
+  --color-background-code: #2E2E2E;
+  --color-text-code: #FF4081;
+  --color-border-code: #757575;
+  --color-background-footer: #1C1C1C;
+  --color-text-footer: #E0E0E0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --image-network: _static/star.png;
+  --color-brand-primary: SpringGreen;
+  --color-brand-content: BlueViolet;
+  --color-brand-background: Fuchsia;
+  --color-background-primary: #121212;
+  --color-background-secondary: #1E1E1E;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #BBBBBB;
+  --color-text-title: #E0E0E0;
+  --color-admonition-title--important: #FF1744;
+  --color-admonition-title--note: #40C4FF;
+  --color-admonition-title--tip: #00E676;
+  --color-admonition-title--warning: #FFC107;
+  --color-admonition-background--important: #FF5252;
+  --color-admonition-background--note: #80D8FF;
+  --color-admonition-background--tip: #B9FBC0;
+  --color-admonition-background--warning: #FFE57F;
+  --color-border: #424242;
+  --color-background-code: #2E2E2E;
+  --color-text-code: #FF4081;
+  --color-border-code: #757575;
+  --color-background-footer: #1C1C1C;
+  --color-text-footer: #E0E0E0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="#"><div class="brand">mtDNA-Network 2.3 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo only-light" src="_static/logol.png" alt="Light Logo"/>
+    <img class="sidebar-logo only-dark" src="_static/logod.png" alt="Dark Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">mtDNA-Network 2.3 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/index.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="mtdna-network">
+<h1>mtDNA-Network<a class="headerlink" href="#mtdna-network" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>mtDNA-Network is a web platform aimed at analyzing and visualizing association networks between mitochondrial DNA (mtDNA) variants and complex diseases. This documentation provides a <strong>user guide</strong> with comprehensive details on how to use and customize the tool, as well as the data and technologies employed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>From version 2 onwards, the tool’s entire interface layout was redesigned to make it more intuitive, informative and easier to navigate. New logos and a unique design were also created for mtDNA-Network.</p>
+</div>
+</section>
+<section id="guide-user">
+<h2>Guide User<a class="headerlink" href="#guide-user" title="Link to this heading">¶</a></h2>
+<p>This section is designed for those who want to explore the tool without diving into the underlying code.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We recommend using the platform on a desktop for better interface performance.</p>
+</div>
+<section id="getting-started">
+<h3>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h3>
+<section id="data">
+<h4>Data<a class="headerlink" href="#data" title="Link to this heading">¶</a></h4>
+<p>The platform addressed next-generation mtDNA sequencing data from samples previously sequenced, pre-processed and genotyped by the Human and Medical Genetics Laboratory/Federal University of Pará. The samples are from patients with three different diseases, (Gastric Cancer, Parkinson and Leprosy), through the work of Cavalcante et al. (2019), together with data obtained from Yuan Y. et al., de Santos et al. (2023, under review) and de Souza et al. (2023). The disease groups have the characteristics described below.</p>
+<p>All graphs and tables for each study present in mtDNA-Network are based on two sets of data, mitochondrial mutations and diseases/clinical forms.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The variants present in all data sets published here are only the variants (somatic and germline) identified in the disease study samples represented by the central nodes, in green, of the association networks, which means that no variants were included exclusive to other diseases present in the association networks, but only the variants shared with the diseases mentioned above.</p>
+</div>
+<section id="gastric-cancer-samples">
+<h5>Gastric cancer samples<a class="headerlink" href="#gastric-cancer-samples" title="Link to this heading">¶</a></h5>
+<blockquote>
+<div><p>The research of the gastric cancer study where the samples were collected included:</p>
+<p>Case (n = 40) and control (n = 50) groups with gastric tissue samples (tumor, adjacent and normal). Sequencing details and primary analyzes are provided by Cavalcante et al. (2019).</p>
+<p>The other types of cancer added to the network came from data extracted from The Cancer Mitochondrial Atlas - TCMA.</p>
+</div></blockquote>
+</section>
+<section id="parkinson-samples">
+<h5>Parkinson samples<a class="headerlink" href="#parkinson-samples" title="Link to this heading">¶</a></h5>
+<blockquote>
+<div><p>The data samples comprise 96 individuals, divided into case and control. The case group comprises 48 patients with idiopathic Parkinson’s disease, with 27 not presenting levodopa-induced dyskinesia (LID) and 21 presenting LID. The control group consists of 48 individuals without Parkinson’s disease or other neurodegenerative diseases (Santos et al., 2023, under review).</p>
+</div></blockquote>
+</section>
+<section id="hanseniasis-samples">
+<h5>Hanseniasis samples<a class="headerlink" href="#hanseniasis-samples" title="Link to this heading">¶</a></h5>
+<blockquote>
+<div><p>Composed of blood samples of leprosy patients (case group, n = 33) and control individuals, healthy household contacts (control group, n = 37). The group of cases is subdivided into three subgroups according to the type of leprosy: borderline lepromatous (BL) leprosy (n = 12), lepromatous (LL) (n = 11) and borderline tuberculoid (BT) leprosy (n = 10) ( Souza et al., 2023).</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Most of the samples came from mixed populations in Northern Brazil, since one of the problems addressed in the mtDNA-Network is the low representation of these populations in genetic studies, taking into account the rich genetic heritage of these individuals given the history of miscegenation in the country.</p>
+</div>
+</section>
+</section>
+</section>
+<section id="pages">
+<h3>Pages<a class="headerlink" href="#pages" title="Link to this heading">¶</a></h3>
+<p>Each page of the site and its features will be described below.</p>
+<section id="home">
+<h4>Home<a class="headerlink" href="#home" title="Link to this heading">¶</a></h4>
+<p>In the latest version of the tool, more information was added about the data and about the tool itself to the home page. From this page you can access all other pages through the menu bar.</p>
+<section id="features">
+<h5>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h5>
+<p>Both on this page and on others, several features were applied, such as interactive hidden tabs and transition effects when loading/scrolling the page and when hovering the cursor over certain elements.</p>
+<blockquote>
+<div><p>Some of these resources were modeled by the css or javascript libraries listed below:</p>
+<ul class="simple">
+<li><p><strong>Carousel</strong>: <a class="reference external" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">Bootstrap.min.css</a>;</p></li>
+<li><p><strong>Text carousel and Disease cards</strong>: <a class="reference external" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">Animate.css</a>, a module that starts animations on elements when the page is loaded;</p></li>
+<li><p><strong>Others cards</strong>: <a class="reference external" href="https://unpkg.com/scrollreveal">ScrollReveal</a>, a module that, through a javascript file, starts animations on elements the moment they appear on the screen.</p></li>
+</ul>
+</div></blockquote>
+<p>Below is an example of an animation created with <code class="docutils literal notranslate"><span class="pre">ScrollReveal</span></code>.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">ScrollReveal</span><span class="p">().</span><span class="nx">reveal</span><span class="p">(</span><span class="s1">&#39;.fadeUp&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="nx">delay</span><span class="o">:</span><span class="w"> </span><span class="mf">300</span><span class="p">,</span><span class="w">         </span><span class="c1">// Delay in milliseconds</span>
+<span class="w">     </span><span class="nx">duration</span><span class="o">:</span><span class="w"> </span><span class="mf">1000</span><span class="p">,</span><span class="w">     </span><span class="c1">// Duration of the animation in milliseconds</span>
+<span class="w">     </span><span class="nx">origin</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;bottom&#39;</span><span class="p">,</span><span class="w">   </span><span class="c1">// The animation should start from the bottom</span>
+<span class="w">     </span><span class="nx">distance</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;20px&#39;</span><span class="p">,</span><span class="w">   </span><span class="c1">// Distance from the origin</span>
+<span class="w">     </span><span class="nx">easing</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ease-in-out&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Type of easing for the animation</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These last two libraries were used on the other pages as well.</p>
+</div>
+</section>
+<section id="team">
+<h5>Team<a class="headerlink" href="#team" title="Link to this heading">¶</a></h5>
+<blockquote>
+<div><p>There is an area on the home page with information about the tool’s authors.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="datasets">
+<h4>Datasets<a class="headerlink" href="#datasets" title="Link to this heading">¶</a></h4>
+<p>On this page, a structure was defined to display data set information through HTML tables manipulated by the <a class="reference external" href="https://datatables.net/">DataTables plug-in</a> from the <a class="reference external" href="https://jquery.com/">jQuery</a> library, adding the following functions to the tables:</p>
+<ul class="simple">
+<li><p><strong>Classification</strong>: You can reverse the display order of the rows that initially appear alphabetically in the first column by clicking the column title.</p></li>
+<li><p><strong>Filtering and/or ordering of rows and/or columns</strong>: You can apply display filters to rows (via the search bar) and columns (via the Column Visibility button); The order of rows can be changed by <strong>Classification</strong> and of columns by dragging the column with the cursor to the right or left.</p></li>
+<li><p><strong>Pagination</strong>: If the table is very large, it is displayed on different pages every 10 rows until the end of the table.</p></li>
+<li><p><strong>Search</strong>: Common search bar.</p></li>
+<li><p><strong>Copy</strong>: Copy the table contents to the clipboard.</p></li>
+<li><p><strong>Download</strong>: Possibility of downloading in CSV, PDF, TXT and XLSX.</p></li>
+</ul>
+<p>To use datatables, simply add the table contents to a JSON file, import the file in a simple javascript code and create a session for the table in HTML as in the code below.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card animate__animated animate__fadeInRight&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;card-sub-title&quot;</span><span class="p">&gt;</span>Mutations by Cancer Type<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mutationTable&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;display&quot;</span><span class="p">&gt;</span>
+        <span class="cm">&lt;!-- The table structure will be populated by DataTables from the JSON file --&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Initializing the Mutation MTDNA Data table (GC)</span>
+<span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#mutationTable&#39;</span><span class="p">).</span><span class="nx">DataTable</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">ajax</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;{{ url_for(&#39;static&#39;, filename=&#39;data/GC/tables/mutation_mtdna_datatable.json&#39;) }}&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// URL for fetching the data</span>
+<span class="w">                </span><span class="nx">dataSrc</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="w"> </span><span class="c1">// Specifies the source for the table data in the JSON</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">columns</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cancer Type&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Column for cancer types</span>
+<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Number of mutations&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Column for the number of mutations</span>
+<span class="w">                </span><span class="p">{</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;List of mutations&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// Column for the list of mutations</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nx">dom</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bfrtip&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Defines the position of the table controls (buttons, search, etc.)</span>
+<span class="w">            </span><span class="nx">buttons</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s1">&#39;copy&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;excel&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;csv&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pdf&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;colvis&#39;</span><span class="p">],</span><span class="w"> </span><span class="c1">// Buttons for exporting and column visibility</span>
+<span class="w">            </span><span class="nx">colReorder</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enables the ColReorder plugin for column reordering</span>
+<span class="w">            </span><span class="nx">responsive</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// Enables the Responsive plugin for responsive tables</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>On the page, the tables are grouped by disease and there is a sidebar with links to all the tables and a search bar as well.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For smaller screens:</p>
+<ul class="simple">
+<li><p>Some columns may be hidden in larger tables and can be viewed by clicking the green plus “+” icon in the first column of each row;</p></li>
+<li><p>Search bars for all pages are displayed via a “magnifying glass” icon in the top left corner of the menu bar.</p></li>
+</ul>
+</div>
+</section>
+<section id="networks">
+<h4>Networks<a class="headerlink" href="#networks" title="Link to this heading">¶</a></h4>
+<p>This page contains graphs of the association networks for each study, created with the <a class="reference external" href="https://d3js.org/">D3.js</a> library created from information in the tables on the Datasets page, as well as all the graphs present in the tool. The graphs here are of the bipartite type, that is, they are represented by two distinct sets, in this case the set “variants” and the set “diseases”, where there are nodes (vertices) in purple represent variants (with numerical codes values ​​referring to the position mtDNA mutation), the nodes in green represent the diseases or clinical manifestations that are the focus of the results of the studies incorporated into the platform and the nodes in pink (if any) represent diseases resulting from the results of other studies, serving only as a complement to the network in this case . Edges represent variant-disease associations.</p>
+<p>Both the networks and their personalization and analysis functionalities were implemented on the page using javascript code, where D3.js is used, in addition to several functions created to model each interactive resource. Network information was stored in JSON files that contain node titles, colors and connections.</p>
+<p>Next to each graph there are a series of resources described below.</p>
+<p>On the page there are 12 sliders (4 in the first column and 8 in the second, divided into 3 “check boxes”), 1 toggle slider to show/hide genes in variants, 1 reset settings button, 1 graph PNG export button, 1 search bar to highlight nodes and 1 search bar to hide nodes.</p>
+<section id="sliders">
+<h5>Sliders<a class="headerlink" href="#sliders" title="Link to this heading">¶</a></h5>
+<blockquote>
+<div><ul class="simple">
+<li><p>There are two sliders to move the graph on the x and y axis within the boundaries of the viewing area;</p></li>
+<li><p>In the <strong>Attracts (+) or repels (-) nodes to/from each other</strong> checkbox, the ‘Strength’ slider defines the strength with which nodes attract or repel each other and the ‘Minimum distance and Maximum distance sliders ‘ define the minimum and maximum distances at which the force is applied;</p></li>
+<li><p>In the <strong>Collide Prevents nodes from overlapping</strong> check box, the ‘Strength’ slider adjusts the collision forces between nodes, the ‘Edge Node’ slider defines the size of the nodes and the ‘Iterations’ slider defines the number of iterations of the calculation of the collision force per tick of the simulation;</p></li>
+<li><p>Finally, in the <strong>link Sets link length</strong> checkbox, the ‘Edge size’ slider defines the desired length of the links and the ‘Iterations’ slider defines the number of iterations of the link strength calculation per tick of the simulation.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It is also possible to change the position of the graph by double-clicking on the position the user wants the graph to move to.</p>
+</div>
+</section>
+</section>
+<section id="dashboards">
+<h4>Dashboards<a class="headerlink" href="#dashboards" title="Link to this heading">¶</a></h4>
+<p>Listed below are all graphs from each dataset published to date.</p>
+<section id="gastric-cancer-dashboard">
+<h5>Gastric Cancer Dashboard<a class="headerlink" href="#gastric-cancer-dashboard" title="Link to this heading">¶</a></h5>
+<p>In this section of the page there are graphs visually showing relationships between individuals, gastric cancer and other cancers extracted from TCMA with the variants shared between them.</p>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Graphics from the session:</strong></dt><dd><ul class="simple">
+<li><p>Individual Number by Mutations</p></li>
+<li><p>Mutations by Disease</p></li>
+<li><p>Disease Number by Mutations</p></li>
+<li><p>Mutations Number by Disease</p></li>
+<li><p>Jaccard Index for Disease Pairs</p></li>
+<li><p>Number of Shared Variants for Disease Pairs</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="parkinson-dashboard">
+<h5>Parkinson Dashboard<a class="headerlink" href="#parkinson-dashboard" title="Link to this heading">¶</a></h5>
+<p>In these sessions we have graphs with data on indels, transitions and transversions identified in the study groups.</p>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Graphics from the session:</strong></dt><dd><ul class="simple">
+<li><p>Sex by Age</p></li>
+<li><p>Transitions Number by Group</p></li>
+<li><p>Transversions Number by Group</p></li>
+<li><p>Indels Count by Locus</p></li>
+<li><p>Transitions Number by Group in MT-CO1</p></li>
+<li><p>Transitions Number by Group in MT-CO3</p></li>
+<li><p>Transitions Number by Group in MT-ND4</p></li>
+<li><p>Transitions Number by Group in MT-ND5</p></li>
+<li><p>Transitions Number by Group in MT-RNR2</p></li>
+<li><p>Transversions Number by Group in MT-CO3</p></li>
+<li><p>Transversions Number by Group in MT-ND4</p></li>
+<li><p>Transversions Number by Group in MT-ND5</p></li>
+<li><p>Transversions Number by Group in MT-RNR2</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="leprosy-dashboard">
+<h5>Leprosy Dashboard<a class="headerlink" href="#leprosy-dashboard" title="Link to this heading">¶</a></h5>
+<p>In the leprosy section we have graphs with heteroplasmy and ancestry information for the case samples (in the 3 clinical forms of the disease) and control.</p>
+<blockquote>
+<div><dl class="simple">
+<dt><strong>Graphics from the session:</strong></dt><dd><ul class="simple">
+<li><p>Mitochondrial Ancestry for Clinical Forms</p></li>
+<li><p>Mitochondrial Ancestry for Poles</p></li>
+<li><p>Variants Count by Locus</p></li>
+<li><p>Heteroplasmy Level by Locus in BL</p></li>
+<li><p>Heteroplasmy Level by Locus in LL</p></li>
+<li><p>Heteroplasmy Level by Locus in BT</p></li>
+<li><p>Heteroplasmy Level by Locus in Control</p></li>
+<li><p>Heteroplasmy Average by Locus between Groups</p></li>
+<li><p>Sex Number and Age by Groups</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="other-page-extensions">
+<h5>Other page extensions<a class="headerlink" href="#other-page-extensions" title="Link to this heading">¶</a></h5>
+<ul>
+<li><p><strong>Macro Haplogroups Map</strong>: Geographic map graphic of the globe with distribution of samples by ancestry data.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>This particular chart has some additional features beyond the traditional ones added by the Highcharts library, including:</dt><dd><ul class="simple">
+<li><p>Possibility to change the type of geographic map between 6 different options;</p></li>
+<li><p>In the <strong>Ortographic</strong> map type, you can ‘rotate’ the globe by clicking and dragging the cursor on the map;</p></li>
+<li><p>It is possible to rotate the map in different directions using 3 sliders (consider <em>xyz</em> plane);</p></li>
+<li><p>In the <strong>LCC</strong> map type, there are 2 other sliders that manipulate two parallel axes on the graph.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="mtdna-maps">
+<h4>mtDNA Maps<a class="headerlink" href="#mtdna-maps" title="Link to this heading">¶</a></h4>
+<ul>
+<li><p><strong>mtDNA Maps</strong>: Here there are graphs, created with the <a class="reference external" href="https://js.cgview.ca/">CGView.js</a> library, showing the mapping of variants along mtDNA.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>The graphics contain the following features:</dt><dd><ul class="simple">
+<li><p><strong>Reset map</strong>: Repositions the graph to its initial position and dimensions.</p></li>
+<li><p><strong>Zoom in and Zoom out</strong>: Increases or decreases the graph, making it possible to view the graph with more or less information.</p></li>
+<li><p><strong>Move Left and Move Right</strong>: If the map is in linear view mode, these controls move the graph left and right. If the map is in circular mode, the controls will move the graph up, down, left or right, following the reference genome in an increasing or decreasing manner.</p></li>
+<li><p><strong>Toggle Linear/Circular format</strong>: Change the mtDNA graph viewing mode.</p></li>
+<li><p><strong>Invert Map Colors</strong>: Change to dark mode.</p></li>
+<li><p><strong>Move to Random Feature and Start/Stop Animation</strong>: Both controls will greatly zoom in on the graph showing the mtDNA GenBank reference sequence for Homo sapiens. The “Move to Random Feature” will zoom in on a random part of the sequence each time it is clicked. While “Start/Stop Animation” will start an animation zooming random parts of the sequence while the button is active.</p></li>
+<li><p><strong>Download Map PNG and Show/Do not show data labels</strong>: Download PNG image (with white background) and show/hide captions on the graph.</p></li>
+</ul>
+</dd>
+<dt>Below is a description of the labels shown in the graph legends.</dt><dd><ul class="simple">
+<li><p><strong>CDS (Coding Sequence)</strong>: Coding sequences, or regions of DNA that are transcribed and translated into proteins, are represented in the CDS series. Each CDS is usually represented by a colored circle that indicates the location and extent of the genes in the graph.</p></li>
+<li><p><strong>tRNA (Transfer RNA)</strong>: This series contains the genes that code for transfer RNA. By transporting amino acids to the ribosome, where they are incorporated into the polypeptide chain, tRNA plays an important role in the translation of the genetic code during protein synthesis. The graph presents the tRNA genes in small segments that correspond to their positions in the genome.</p></li>
+<li><p><strong>rRNA (Ribosomal RNA)</strong>: The rRNA series includes genes that code for ribosomal RNA, an essential part of the ribosome, the cellular machine responsible for protein synthesis. In mitochondrial DNA, there are usually genes for both 12S and 16S rRNAs. The rRNA genes appear as segments in the graph, typically larger than the tRNA genes due to their size.</p></li>
+<li><p><strong>GC Content</strong>: The amount of guanine (G) and cytosine (C) bases in a specific region of DNA compared to adenine (A) and thymine (T) is called the GC content. Because of the presence of three hydrogen bonds between G and C, compared to two between A and T, GC-rich regions are generally more stable than GC-poor regions. This allows analysis of GC content to reveal information about the stability of the DNA double helix. GC content is represented as a band indicating changes in GC content across the genome.</p></li>
+<li><p><strong>GC Skew +</strong>: The GC Skew+ measurement compares the number of guanine (G) and cytosine (C) bases in a specific region of DNA. Specifically, the result is calculated as (G−C)/(G+C). Positive values indicate an excess of G compared to C, indicating particular features of DNA transcription and replication. This series is displayed as a band indicating areas with positive GC Skew values.</p></li>
+<li><p><strong>GC Skew -</strong>: This is the opposite of GC Skew+. It represents areas where cytosine (C) outnumbers guanine (G). Negative values indicate a different polarity in DNA transcription or replication. This series is shown in the same range as GC Skew+, but with the GC Skew value negative, down-axis, and in a different color.</p></li>
+<li><p><strong>Variant</strong>: All mutations identified in gastric cancer samples.</p></li>
+</ul>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We emphasize that the sequence of base pairs shown in the graph are from the reference data taken from <a class="reference external" href="https://www.ncbi.nlm.nih.gov/nuccore/NC_012920.1">NCBI</a>. Therefore, in the places where the mutations are located, it shows what the sequence of base stops should be in that exact region.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to package incompatibilities, the mtDNA graphs were allocated in a separate area (<strong>mtDNA Maps</strong> page) from other sections of the Dashborads page, even though it is an extension of this page.</p>
+</div>
+</section>
+<section id="my-network">
+<h4>My Network<a class="headerlink" href="#my-network" title="Link to this heading">¶</a></h4>
+<p>This page was created exclusively to enable the creation of interactive network graphs by users themselves.
+Networks can be of any type, not necessarily graphs of relationships between mutations and diseases, and will have the same functionalities as the networks present in <strong>Networks</strong>. Below is a detailed description of how to create networks, with an example at the end of the tutorial.</p>
+<section id="instructions-for-generating-network">
+<h5>Instructions for Generating Network<a class="headerlink" href="#instructions-for-generating-network" title="Link to this heading">¶</a></h5>
+<p>To create a network, the user must create and import a table in CSV format in the <strong>Upload and Attach Files</strong> area of ​​the page. We chose the CSV(Comma-Separated Values), format to import the table because it has a simple structure and makes it possible to create a lightweight file, even with a large volume of data. Furthermore, in this format the user is free to include data from other works or databases in their network and not just data from their research.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In the .csv format, columns are separated by certain delimiters, usually by commas ( , ) as the name suggests, but depending on the way these files are created, other characters can also be used for this, such as semicolons ( ; ) or tab (/t). <strong>To avoid errors, make sure your table uses a comma ( , )</strong> as a delimiter. It is possible to determine this when creating these files in certain IDEs such as RStudio or Visual Studio Code or even creating the table in Excel and exporting it in this format or exporting it in XLSX and converting it later on online sites, such as <a class="reference external" href="https://convertio.co/pt/xlsx-csv/">convertio</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Data strings (text) and column titles may or may not be enclosed in double quotation marks (“), but avoid mixing the two formatting options. In the template provided, the information is enclosed in double quotation marks.</p>
+</div>
+<p>The table must contain three columns with the following titles, in the same order as the list:</p>
+<ol class="arabic simple">
+<li><p><strong>nodes_id</strong>: Contains the titles of all nodes in the network, which can be names of diseases, genes, mutations, proteins, etc;</p></li>
+<li><p><strong>nodes_color</strong>: In this column the color of the node is defined, where you can choose between the following color options:</p></li>
+</ol>
+<p style="margin-bottom:0!important;">
+  <strong style="font-size: 14px; color:#62ff00 !important;">⬤</strong> lime
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#fff319 !important;">⬤</strong> yellow
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#ffaa43 !important;">⬤</strong> orange
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#ff5b5b !important;">⬤</strong> red
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#ff7d71 !important;">⬤</strong> salmon
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#ff7bb2 !important;">⬤</strong> pink
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#d966ff !important;">⬤</strong> violet
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#ae7bff !important;">⬤</strong> purple
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#82a3ff !important;">⬤</strong> blue
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#2dd5ff !important;">⬤</strong> aqua
+</p>
+<p style="margin-block: 0!important;">
+  <strong style="font-size: 14px; color:#5dd673 !important;">⬤</strong> green
+</p>
+<p style="margin-top:0!important;">
+  <strong style="font-size: 14px; color:#a1c23c !important;">⬤</strong> olive
+</p><div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>In the <strong>nodes_color column</strong> it is possible to add 12 different colors for the nodes, if there are more types of nodes in your network, you can choose one of the available colors and place it on all lines.</p></li>
+<li><p>In the <strong>connected_nodes column</strong> it is not necessary to repeat the connections, that is, if you have already defined in one line: the node “disease-1” in “nodes_id” and “variant-1” in “connected_nodes”, it is not necessary put “disease-1” in the “connected_nodes” column of the “variant-1” node row, leaving the value blank in this case. Note that in our models, we only place values ​​in the “connected_nodes” column in rows with nodes from the “green” category in the “nodes_color” column, as there are only two categories of nodes and the central node, connected to all other nodes in this example.</p></li>
+</ul>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>connected_nodes</strong>: This column will add the edges of the graph, in it you place the nodes connected to the node in the “nodes_id” column. You can place one connected node per line, so if there is more than one connection to the same node, you must repeat the same line, replacing only the value in “connected_nodes” or you can place all connected nodes on the same line, but separated by tabulation ( | ), if you choose this method, the table delimiters cannot under any circumstances be this character ( | ).</p></li>
+</ol>
+<p>After finishing the CSV, making sure it is correctly formatted, the file can now be imported onto the page. When importing it, the file name and the amount of memory it occupies will appear. If the user wishes, it is possible to remove the import by clicking <strong>Cancel</strong>, if you wish to continue, simply click <strong>Generate</strong> to process the file and create the network visualization.</p>
+</section>
+<section id="example">
+<h5>Example<a class="headerlink" href="#example" title="Link to this heading">¶</a></h5>
+<p>This subsection will show the creation of a network generated from a table called <strong>star.csv</strong>, as it forms a graph that resembles a star.</p>
+<p>Below is the content of the file and what the table would look like.</p>
+<section id="csv">
+<h6>CSV<a class="headerlink" href="#csv" title="Link to this heading">¶</a></h6>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>&quot;node_id&quot;,&quot;node_color&quot;,&quot;connected_nodes&quot;
+<span class="linenos">2</span>&quot;A&quot;,&quot;yellow&quot;,&quot;B | E&quot;
+<span class="linenos">3</span>&quot;B&quot;,&quot;yellow&quot;,&quot;A | C&quot;
+<span class="linenos">4</span>&quot;C&quot;,&quot;yellow&quot;,&quot;B | D&quot;
+<span class="linenos">5</span>&quot;D&quot;,&quot;yellow&quot;,&quot;C | E&quot;
+<span class="linenos">6</span>&quot;E&quot;,&quot;yellow&quot;,&quot;D | A&quot;
+</pre></div>
+</div>
+</section>
+<section id="table">
+<h6>Table<a class="headerlink" href="#table" title="Link to this heading">¶</a></h6>
+<div class="table-wrapper docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>node_id</p></th>
+<th class="head"><p>node_color</p></th>
+<th class="head"><p>connected_nodes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>A</p></td>
+<td><p>yellow</p></td>
+<td><p>B | E</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>yellow</p></td>
+<td><p>A | C</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>yellow</p></td>
+<td><p>B | D</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p>yellow</p></td>
+<td><p>C | E</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>yellow</p></td>
+<td><p>D | A</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="on-page">
+<h6>On page<a class="headerlink" href="#on-page" title="Link to this heading">¶</a></h6>
+<a class="reference internal image-reference" href="_images/star_import.png"><img alt="Importing star.csv to the My Network page." class="align-center" src="_images/star_import.png" style="height: 450px;" />
+</a>
+<p>When clicking on Generate we have:</p>
+<a class="reference internal image-reference" href="_images/star.png"><img alt="Star network generated." class="align-center" src="_images/star.png" style="height: 450px;" />
+</a>
+<img class="image-network" alt="Star network generated" height="350px" align="center"><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On the page there are some template options to download and edit (in CSV and XLSX).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>Any graphic created will be deleted when leaving the page;</p></li>
+<li><p>Do not change the column names or the table structure;</p></li>
+<li><p>The “node_color” column is only used to define the color of the nodes, so any text other than the 12 options will not be identified and the node will be gray.</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="technical-information">
+<h2>Technical information<a class="headerlink" href="#technical-information" title="Link to this heading">¶</a></h2>
+<p>Just like the networks present in the tool, those created here will be modeled by the D3.js library, with all the features of the others, except the <strong>show locus</strong> feature (present in networks in Networks).</p>
+<p>Within the project there is an empty JSON file that is filled with JavaScript code that converts the content of the user’s CSV table to JSON format and stores this information temporarily (until the user exits or reloads the page). When importing the CSV and clicking on <strong>Generate</strong>, the code is “activated” and then the JSON file is filled in and another javascript code manipulates this JSON, together with D3.js to generate the network on the page.</p>
+<p>To make this possible, the <a class="reference external" href="https://pypi.org/project/Flask-Cors/">Flask-Cors API</a> extension was used to enable the <strong>CORS</strong> (Cross-Origin Resource Sharing) API in the project’s main.py, to allow the frontend to make requests to the backend from origins (domains ) different, without causing errors related to CORS security.</p>
+<p>To allow the “writing” of empty JSON within the project by external sources (in this case, users), the <strong>HTTP POST</strong> method was used. POST is used to send data to the server, and in this case, it is used to save the JSON content sent to the file on the server from processing the user’s CSV file.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The API had to be installed on the tool’s hosting server, <a class="reference external" href="https://www.pythonanywhere.com/">PythonAnyWhere</a>;</p></li>
+<li><p>This server was used for the mtDNA-Network, due to the use of the python micro-framework <a class="reference external" href="https://flask.palletsprojects.com/en/stable/">Flask</a> in the project.</p></li>
+</ul>
+</div>
+<p>Below is a simplified version of the <strong>main.py</strong> file showing some of the imported modules, the logic for processing data on the <strong>My Network</strong> page and the rendering of the project with an example for the home page (the same applies to other pages).</p>
+<section id="simplified-main-py">
+<h3>Simplified main.py<a class="headerlink" href="#simplified-main-py" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># other modules</span>
+<span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask.templating</span> <span class="kn">import</span> <span class="n">render_template</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">CORS</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># Define the path where the JSON file will be saved</span>
+<span class="n">SAVE_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">app</span><span class="o">.</span><span class="n">root_path</span><span class="p">,</span> <span class="s1">&#39;static&#39;</span><span class="p">,</span> <span class="s1">&#39;UserGraph&#39;</span><span class="p">,</span> <span class="s1">&#39;My_Network.json&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/clear-json&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">clear_json</span><span class="p">():</span>
+    <span class="c1"># Open the file at SAVE_PATH in write mode and clear its contents</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SAVE_PATH</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>  <span class="c1"># Clears the content of the file</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/upload-json&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">upload_json</span><span class="p">():</span>
+    <span class="c1"># Get the JSON content from the request body</span>
+    <span class="n">json_content</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;fileContent&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">json_content</span><span class="p">:</span>
+        <span class="c1"># If content is found, open the file at SAVE_PATH in write mode and save the content</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SAVE_PATH</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json_content</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">_static_folder</span> <span class="o">=</span> <span class="s1">&#39;static&#39;</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">page</span><span class="p">():</span>
+ <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;home.html&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+ <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="project-organization">
+<h3>Project organization<a class="headerlink" href="#project-organization" title="Link to this heading">¶</a></h3>
+<p>Below is an image showing how the project’s parent folder and its files were organized.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to the large number of files (285 in total), only the main folders and files are shown in the image.</p>
+</div>
+<a class="reference internal image-reference" href="_images/projeto.png"><img alt="Star network generated." class="align-center" src="_images/projeto.png" style="height: 500px;" />
+</a>
+</section>
+<section id="pages-structure">
+<h3>Pages structure<a class="headerlink" href="#pages-structure" title="Link to this heading">¶</a></h3>
+<p>Below is a use case diagram, which shows the possible user movements through the mtDNA-Network pages.</p>
+<a class="reference internal image-reference" href="_images/paginas.png"><img alt="Star network generated." class="align-center" src="_images/paginas.png" style="height: 300px;" />
+</a>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2024, leticia
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">mtDNA-Network</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#guide-user">Guide User</a><ul>
+<li><a class="reference internal" href="#getting-started">Getting Started</a><ul>
+<li><a class="reference internal" href="#data">Data</a><ul>
+<li><a class="reference internal" href="#gastric-cancer-samples">Gastric cancer samples</a></li>
+<li><a class="reference internal" href="#parkinson-samples">Parkinson samples</a></li>
+<li><a class="reference internal" href="#hanseniasis-samples">Hanseniasis samples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pages">Pages</a><ul>
+<li><a class="reference internal" href="#home">Home</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#team">Team</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#datasets">Datasets</a></li>
+<li><a class="reference internal" href="#networks">Networks</a><ul>
+<li><a class="reference internal" href="#sliders">Sliders</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dashboards">Dashboards</a><ul>
+<li><a class="reference internal" href="#gastric-cancer-dashboard">Gastric Cancer Dashboard</a></li>
+<li><a class="reference internal" href="#parkinson-dashboard">Parkinson Dashboard</a></li>
+<li><a class="reference internal" href="#leprosy-dashboard">Leprosy Dashboard</a></li>
+<li><a class="reference internal" href="#other-page-extensions">Other page extensions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mtdna-maps">mtDNA Maps</a></li>
+<li><a class="reference internal" href="#my-network">My Network</a><ul>
+<li><a class="reference internal" href="#instructions-for-generating-network">Instructions for Generating Network</a></li>
+<li><a class="reference internal" href="#example">Example</a><ul>
+<li><a class="reference internal" href="#csv">CSV</a></li>
+<li><a class="reference internal" href="#table">Table</a></li>
+<li><a class="reference internal" href="#on-page">On page</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#technical-information">Technical information</a><ul>
+<li><a class="reference internal" href="#simplified-main-py">Simplified main.py</a></li>
+<li><a class="reference internal" href="#project-organization">Project organization</a></li>
+<li><a class="reference internal" href="#pages-structure">Pages structure</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=57236720"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    </body>
+</html>
